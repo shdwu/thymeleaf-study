@@ -1,0 +1,23 @@
+group 'com.github.shdwu'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile "org.thymeleaf:thymeleaf:${thymeleafVersion}"
+    providedCompile  "javax.servlet:javax.servlet-api:${javaxServletVersion}"
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    compile "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
+    compileOnly "org.projectlombok:lombok:1.16.14"
+}
